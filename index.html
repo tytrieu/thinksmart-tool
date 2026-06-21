@@ -7,84 +7,61 @@
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:'Be Vietnam Pro',sans-serif;background:#0a0f1e;min-height:100vh;padding:16px;}
-    .app{width:100%;max-width:1100px;margin:0 auto;background:linear-gradient(135deg,#0f172a 0%,#1e293b 60%,#1e1b4b 100%);color:#e2e8f0;padding:24px 16px;border-radius:16px;}
-
-    /* HEADER */
+    body{font-family:'Be Vietnam Pro',sans-serif;background:#f0f0f0;min-height:100vh;padding:16px;}
+    .app{width:100%;max-width:1100px;margin:0 auto;background:#f8f8f8;color:#1a1a1a;padding:24px 16px;border-radius:16px;}
     .header{text-align:center;margin-bottom:20px;}
-    .badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.28);border-radius:999px;color:#a5b4fc;font-size:10px;font-weight:700;letter-spacing:0.1em;margin-bottom:10px;}
-    .pulse{width:6px;height:6px;border-radius:50%;background:#818cf8;animation:pulse 1.5s ease-in-out infinite;flex-shrink:0;}
+    .badge{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;background:#fff;border:1.5px solid #e11d1d;border-radius:999px;color:#c41a1a;font-size:10px;font-weight:700;letter-spacing:0.1em;margin-bottom:10px;}
+    .pulse{width:6px;height:6px;border-radius:50%;background:#e11d1d;animation:pulse 1.5s ease-in-out infinite;flex-shrink:0;}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
-    .main-title{font-size:clamp(28px,6vw,42px);font-weight:900;background:linear-gradient(90deg,#fff 0%,#c7d2fe 55%,#d8b4fe 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;letter-spacing:-0.5px;}
-    .main-sub{color:#64748b;font-size:12px;line-height:1.7;max-width:400px;margin:0 auto;}
-
-    /* LAYOUT */
+    .main-title{font-size:clamp(26px,5vw,38px);font-weight:900;color:#111;margin-bottom:8px;letter-spacing:-0.5px;}
+    .main-sub{color:#666;font-size:12.5px;line-height:1.7;max-width:420px;margin:0 auto;}
     .grid{display:grid;grid-template-columns:1fr 1.45fr;gap:16px;align-items:start;}
-    @media(max-width:720px){
-      .grid{grid-template-columns:1fr;}
-      .app{padding:16px 12px;}
-      body{padding:10px;}
-    }
-
-    /* CARDS */
-    .card{background:rgba(15,23,42,0.65);border:1px solid rgba(51,65,85,0.8);border-radius:16px;padding:18px;}
-    .card-hd{font-size:12px;font-weight:700;color:#cbd5e1;display:flex;align-items:center;gap:7px;padding-bottom:12px;border-bottom:1px solid rgba(51,65,85,0.5);margin-bottom:16px;}
-
-    /* KỊCH BẢN */
-    .story-box{background:rgba(49,46,129,0.15);border:1px solid rgba(99,102,241,0.2);border-radius:12px;padding:14px;margin-bottom:16px;}
-    .story-lbl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#818cf8;display:flex;align-items:center;gap:5px;margin-bottom:12px;}
+    @media(max-width:720px){.grid{grid-template-columns:1fr;}.app{padding:16px 12px;}body{padding:10px;}}
+    .card{background:#fff;border:1px solid #e5e5e5;border-radius:14px;padding:20px;}
+    .card-hd{font-size:12.5px;font-weight:700;color:#222;display:flex;align-items:center;gap:7px;padding-bottom:12px;border-bottom:2px solid #f0f0f0;margin-bottom:16px;}
+    .story-box{background:#fff5f5;border:1.5px solid #fca5a5;border-radius:12px;padding:14px;margin-bottom:16px;}
+    .story-lbl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#c41a1a;display:flex;align-items:center;gap:5px;margin-bottom:12px;}
     .story-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-bottom:12px;}
-    .story-step{background:rgba(2,6,23,0.35);border:1px solid rgba(51,65,85,0.5);border-radius:9px;padding:10px 6px;text-align:center;}
-    .story-step-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#475569;margin-bottom:5px;}
+    .story-step{background:#fff;border:1px solid #e5e5e5;border-radius:9px;padding:10px 6px;text-align:center;}
+    .story-step-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#999;margin-bottom:5px;}
     .story-step-val{font-size:15px;font-weight:900;margin-bottom:3px;}
-    .story-step-desc{font-size:9.5px;color:#64748b;line-height:1.3;}
-    .story-note{font-size:11px;color:#94a3b8;line-height:1.6;font-style:italic;}
-    .reset-btn{margin-top:10px;font-size:11px;font-weight:700;color:#818cf8;background:rgba(15,23,42,0.5);border:1px solid rgba(99,102,241,0.18);border-radius:8px;padding:7px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Be Vietnam Pro',sans-serif;transition:all 0.2s;-webkit-tap-highlight-color:transparent;}
-    .reset-btn:hover{color:#a5b4fc;background:rgba(99,102,241,0.12);}
-
-    /* CONTROLS */
+    .story-step-desc{font-size:9.5px;color:#888;line-height:1.3;}
+    .story-note{font-size:11px;color:#666;line-height:1.6;font-style:italic;}
+    .reset-btn{margin-top:10px;font-size:11px;font-weight:700;color:#c41a1a;background:#fff;border:1.5px solid #fca5a5;border-radius:8px;padding:7px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Be Vietnam Pro',sans-serif;transition:all 0.2s;-webkit-tap-highlight-color:transparent;}
+    .reset-btn:hover{background:#fff5f5;}
     .ctrl-group{margin-bottom:16px;}
-    .ctrl-lbl{font-size:12px;color:#94a3b8;font-weight:500;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+    .ctrl-lbl{font-size:12px;color:#555;font-weight:500;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
     .ctrl-val{font-weight:800;}
-    input[type=range]{width:100%;height:5px;border-radius:4px;outline:none;appearance:none;-webkit-appearance:none;cursor:pointer;margin-bottom:8px;background:#1e293b;}
-    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;cursor:pointer;border:2px solid #0f172a;}
-    .num-input{width:100%;background:rgba(2,6,23,0.6);border:1px solid rgba(51,65,85,0.8);border-radius:10px;padding:10px 13px;font-size:14px;font-family:'Be Vietnam Pro',sans-serif;color:#e2e8f0;outline:none;transition:border 0.2s;}
-    .num-input:focus{border-color:#6366f1;}
-
-    /* CHART AREA */
-    .sec-lbl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#818cf8;}
-    .svg-wrap{background:rgba(2,6,23,0.4);border:1px solid rgba(51,65,85,0.55);border-radius:12px;padding:12px;margin-bottom:12px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
-    .flow-banner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:12px 14px;background:rgba(2,6,23,0.5);border:1px solid rgba(51,65,85,0.55);border-radius:12px;gap:8px;margin-bottom:12px;}
-    .flow-lbl{font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#475569;margin-bottom:3px;}
-    .flow-nums{font-size:11.5px;font-weight:600;color:#e2e8f0;line-height:1.6;}
-    .result-pill{padding:8px 14px;border-radius:9px;font-size:16px;font-weight:900;text-align:center;min-width:88px;flex-shrink:0;}
-
-    /* STAT BOXES */
+    input[type=range]{width:100%;height:5px;border-radius:4px;outline:none;appearance:none;-webkit-appearance:none;cursor:pointer;margin-bottom:8px;background:#e5e5e5;}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#e11d1d;cursor:pointer;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.15);}
+    .num-input{width:100%;background:#f5f5f5;border:1.5px solid #e5e5e5;border-radius:10px;padding:10px 13px;font-size:14px;font-family:'Be Vietnam Pro',sans-serif;color:#111;outline:none;transition:border 0.2s;}
+    .num-input:focus{border-color:#e11d1d;}
+    .sec-lbl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#c41a1a;}
+    .svg-wrap{background:#f5f5f5;border:1px solid #e5e5e5;border-radius:12px;padding:12px;margin-bottom:12px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+    .flow-banner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:12px 14px;background:#f5f5f5;border:1px solid #e5e5e5;border-radius:12px;gap:8px;margin-bottom:12px;}
+    .flow-lbl{font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#999;margin-bottom:3px;}
+    .flow-nums{font-size:12px;font-weight:600;color:#222;line-height:1.6;}
+    .result-pill{padding:8px 14px;border-radius:9px;font-size:15px;font-weight:900;text-align:center;min-width:90px;flex-shrink:0;}
     .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
     @media(max-width:400px){.stat-grid{grid-template-columns:1fr;}}
-    .stat-box{background:rgba(2,6,23,0.3);border:1px solid rgba(51,65,85,0.45);border-radius:12px;padding:13px;}
-    .stat-title{font-size:9.5px;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:9px;line-height:1.5;}
-    .stat-row{display:flex;justify-content:space-between;align-items:center;font-size:11px;padding:5px 0;border-bottom:1px solid rgba(51,65,85,0.28);}
+    .stat-box{background:#f8f8f8;border:1px solid #e5e5e5;border-radius:12px;padding:13px;}
+    .stat-title{font-size:9.5px;color:#999;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:9px;line-height:1.5;}
+    .stat-row{display:flex;justify-content:space-between;align-items:center;font-size:11px;padding:5px 0;border-bottom:1px solid #efefef;}
     .stat-row:last-child{border-bottom:none;}
-    .recovery-box{background:rgba(127,29,29,0.15);border:1px solid rgba(153,27,27,0.28);border-radius:9px;padding:11px;margin-top:7px;}
-    .recovery-val{font-size:22px;font-weight:900;color:#fbbf24;margin:4px 0;}
-
-    /* LESSONS */
-    .lesson-title{font-size:12.5px;font-weight:700;color:#a5b4fc;margin-bottom:9px;line-height:1.5;}
-    .lesson-text{font-size:12px;color:#94a3b8;line-height:1.8;}
+    .recovery-box{background:#fff5f5;border:1.5px solid #fca5a5;border-radius:9px;padding:11px;margin-top:7px;}
+    .recovery-val{font-size:22px;font-weight:900;color:#e11d1d;margin:4px 0;}
+    .lesson-title{font-size:12.5px;font-weight:700;color:#c41a1a;margin-bottom:9px;line-height:1.5;}
+    .lesson-text{font-size:12px;color:#444;line-height:1.8;}
     .lesson-text li{margin-left:16px;margin-bottom:6px;list-style:disc;}
     .lesson-text li:last-child{margin-bottom:0;}
-
-    /* QUICK REF */
     .quick-ref{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;}
     @media(max-width:400px){.quick-ref{grid-template-columns:repeat(2,1fr);}}
-    .ref-box{background:rgba(2,6,23,0.4);border:1px solid rgba(51,65,85,0.55);border-radius:10px;padding:10px 5px;text-align:center;}
-    .ref-lbl{font-size:9.5px;color:#64748b;font-weight:500;margin-bottom:2px;}
-    .ref-loss{font-size:14px;font-weight:900;color:#f43f5e;margin-bottom:4px;}
-    .ref-rec-lbl{font-size:9.5px;color:#64748b;}
-    .ref-rec{font-size:11.5px;font-weight:700;color:#a5b4fc;margin-top:2px;}
-
-    footer{text-align:center;font-size:11px;color:#475569;margin-top:20px;padding-top:16px;border-top:1px solid rgba(30,41,59,0.9);line-height:1.8;}
+    .ref-box{background:#f8f8f8;border:1px solid #e5e5e5;border-radius:10px;padding:10px 5px;text-align:center;}
+    .ref-lbl{font-size:9.5px;color:#999;font-weight:500;margin-bottom:2px;}
+    .ref-loss{font-size:14px;font-weight:900;color:#e11d1d;margin-bottom:4px;}
+    .ref-rec-lbl{font-size:9.5px;color:#888;}
+    .ref-rec{font-size:11.5px;font-weight:700;color:#111;margin-top:2px;}
+    footer{text-align:center;font-size:11px;color:#aaa;margin-top:20px;padding-top:16px;border-top:1px solid #e5e5e5;line-height:1.8;}
   </style>
 </head>
 <body>
@@ -93,15 +70,14 @@
   <div class="header">
     <div class="badge"><span class="pulse"></span>THINKSMART TRAINING FORUM</div>
     <div class="main-title">Learning Tool</div>
-    <p class="main-sub">Minh hoạ trực quan : Sự biến động lợi nhuận từ thị trường sẽ ảnh hưởng như thế nào trong quản lý tài sản</p>
+    <p class="main-sub">Minh Hoạ Trực Quan : Sự biến động lợi nhuận từ thị trường sẽ ảnh hưởng như thế nào trong quản lý tài sản</p>
   </div>
 
   <div class="grid">
 
-    <!-- CỘT TRÁI: Controls -->
     <div class="card">
       <div class="card-hd">
-        <svg width="15" height="15" fill="none" stroke="#818cf8" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+        <svg width="15" height="15" fill="none" stroke="#e11d1d" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
         Cấu hình thông số
       </div>
 
@@ -113,17 +89,17 @@
         <div class="story-grid">
           <div class="story-step">
             <div class="story-step-label">Vốn gốc</div>
-            <div class="story-step-val" style="color:#a5b4fc;">$10,000</div>
+            <div class="story-step-val" style="color:#333;">$10,000</div>
             <div class="story-step-desc">Ban đầu</div>
           </div>
           <div class="story-step">
             <div class="story-step-label">Năm Thứ Nhứt</div>
-            <div class="story-step-val" style="color:#34d399;">+50%</div>
+            <div class="story-step-val" style="color:#16a34a;">+50%</div>
             <div class="story-step-desc">Đạt $15,000</div>
           </div>
           <div class="story-step">
             <div class="story-step-label">Năm Thứ Hai</div>
-            <div class="story-step-val" style="color:#f87171;">-50%</div>
+            <div class="story-step-val" style="color:#e11d1d;">-50%</div>
             <div class="story-step-desc">Kết quả?</div>
           </div>
         </div>
@@ -132,32 +108,31 @@
       </div>
 
       <div class="ctrl-group">
-        <div class="ctrl-lbl">Vốn Ban Đầu <span class="ctrl-val" id="disp-start" style="color:#818cf8">$10,000</span></div>
-        <input type="range" id="sl-start" min="1000" max="100000" step="500" value="10000" style="accent-color:#6366f1" oninput="sync('start',this.value)">
+        <div class="ctrl-lbl">Vốn Ban Đầu <span class="ctrl-val" id="disp-start" style="color:#e11d1d">$10,000</span></div>
+        <input type="range" id="sl-start" min="1000" max="100000" step="500" value="10000" style="accent-color:#e11d1d" oninput="sync('start',this.value)">
         <input class="num-input" type="number" id="in-start" value="10000" oninput="sync('start',this.value)">
       </div>
       <div class="ctrl-group">
-        <div class="ctrl-lbl">Lợi nhuận Năm 1 <span class="ctrl-val" id="disp-y1" style="color:#34d399">+50%</span></div>
-        <input type="range" id="sl-y1" min="-99" max="200" step="1" value="50" style="accent-color:#10b981" oninput="sync('y1',this.value)">
+        <div class="ctrl-lbl">Lợi nhuận Năm 1 <span class="ctrl-val" id="disp-y1" style="color:#16a34a">+50%</span></div>
+        <input type="range" id="sl-y1" min="-99" max="200" step="1" value="50" style="accent-color:#16a34a" oninput="sync('y1',this.value)">
         <input class="num-input" type="number" id="in-y1" value="50" oninput="sync('y1',this.value)">
       </div>
       <div class="ctrl-group" style="margin-bottom:0;">
-        <div class="ctrl-lbl">Lợi nhuận Năm 2 <span class="ctrl-val" id="disp-y2" style="color:#f87171">-50%</span></div>
-        <input type="range" id="sl-y2" min="-99" max="200" step="1" value="-50" style="accent-color:#f43f5e" oninput="sync('y2',this.value)">
+        <div class="ctrl-lbl">Lợi nhuận Năm 2 <span class="ctrl-val" id="disp-y2" style="color:#e11d1d">-50%</span></div>
+        <input type="range" id="sl-y2" min="-99" max="200" step="1" value="-50" style="accent-color:#e11d1d" oninput="sync('y2',this.value)">
         <input class="num-input" type="number" id="in-y2" value="-50" oninput="sync('y2',this.value)">
       </div>
     </div>
 
-    <!-- CỘT PHẢI: Visual -->
     <div style="display:flex;flex-direction:column;gap:14px;">
 
       <div class="card">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
           <span class="sec-lbl">Mô phỏng chu trình tài sản</span>
-          <span style="font-size:9.5px;color:#334155;font-weight:700;">Live</span>
+          <span style="font-size:9.5px;color:#bbb;font-weight:700;">Live</span>
         </div>
-        <h3 style="font-size:17px;font-weight:800;color:#fff;margin-bottom:5px;line-height:1.4;">Tăng 50%, Giảm 50% Có Phải Là Huề Vốn?</h3>
-        <p style="font-size:12px;color:#64748b;font-style:italic;margin-bottom:14px;line-height:1.5;">Nhiều người sẽ nghĩ là huề vốn, nhưng kết quả sẽ khiến bạn bất ngờ...</p>
+        <h3 style="font-size:17px;font-weight:800;color:#111;margin-bottom:5px;line-height:1.4;">Tăng 50%, Giảm 50% Có Phải Là Huề Vốn?</h3>
+        <p style="font-size:12px;color:#888;font-style:italic;margin-bottom:14px;line-height:1.5;">Nhiều người sẽ nghĩ là huề vốn, nhưng kết quả sẽ khiến bạn bất ngờ...</p>
 
         <div class="svg-wrap">
           <svg id="main-svg" viewBox="0 0 500 180" style="width:100%;min-width:320px;overflow:visible;display:block;"></svg>
@@ -174,9 +149,9 @@
         <div class="stat-grid">
           <div class="stat-box">
             <div class="stat-title">Các Bước Tính Toán</div>
-            <div class="stat-row"><span style="color:#64748b;font-size:10.5px;">Vốn ban đầu:</span><span id="st-start" style="font-weight:700;font-size:10.5px;color:#e2e8f0;"></span></div>
-            <div class="stat-row"><span id="st-y1-lbl" style="color:#64748b;font-size:10.5px;"></span><span id="st-y1-val" style="font-weight:700;font-size:10.5px;"></span></div>
-            <div class="stat-row"><span id="st-y2-lbl" style="color:#64748b;font-size:10.5px;"></span><span id="st-y2-val" style="font-weight:700;font-size:10.5px;"></span></div>
+            <div class="stat-row"><span style="color:#999;font-size:10.5px;">Vốn ban đầu:</span><span id="st-start" style="font-weight:700;font-size:10.5px;color:#111;"></span></div>
+            <div class="stat-row"><span id="st-y1-lbl" style="color:#999;font-size:10.5px;"></span><span id="st-y1-val" style="font-weight:700;font-size:10.5px;"></span></div>
+            <div class="stat-row"><span id="st-y2-lbl" style="color:#999;font-size:10.5px;"></span><span id="st-y2-val" style="font-weight:700;font-size:10.5px;"></span></div>
           </div>
           <div class="stat-box">
             <div class="stat-title">Cần Tăng Bao Nhiêu Để Quay Lại Vốn Ban Đầu?</div>
@@ -185,10 +160,9 @@
         </div>
       </div>
 
-      <!-- Bài học -->
       <div class="card" style="padding:0;overflow:hidden;">
-        <div style="padding:16px 18px;border-bottom:1px solid rgba(51,65,85,0.45);">
-          <div style="font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#64748b;margin-bottom:12px;">Bài Học Tư Vấn</div>
+        <div style="padding:16px 18px;border-bottom:1px solid #efefef;">
+          <div style="font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#bbb;margin-bottom:12px;">Bài Học Tư Vấn</div>
           <div class="lesson-title">Phần trăm tăng và phần trăm giảm không đối xứng với nhau.</div>
           <ul class="lesson-text" style="margin-top:5px;">
             <li>Nếu $10,000 tăng được 50%, số tiền sẽ thành $15,000.</li>
@@ -196,7 +170,7 @@
             <li>Đó là lý do vì sao tăng 50% rồi giảm 50% không có nghĩa là huề vốn.</li>
           </ul>
         </div>
-        <div style="padding:16px 18px;border-bottom:1px solid rgba(51,65,85,0.45);">
+        <div style="padding:16px 18px;border-bottom:1px solid #efefef;">
           <div class="lesson-title">Điều này có ý nghĩa gì trong tài chính?</div>
           <ul class="lesson-text" style="margin-top:5px;">
             <li>Tăng trưởng là quan trọng. Nhưng tăng trưởng ổn định và kiểm soát rủi ro còn quan trọng hơn.</li>
@@ -204,7 +178,7 @@
           </ul>
         </div>
         <div style="padding:16px 18px;">
-          <div style="font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#64748b;margin-bottom:11px;">Bảng Tham Chiếu Nhanh — Sức Bào Mòn Của Biến Động</div>
+          <div style="font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#bbb;margin-bottom:11px;">Bảng Tham Chiếu Nhanh — Sức Bào Mòn Của Biến Động</div>
           <div class="quick-ref">
             <div class="ref-box"><div class="ref-lbl">Nếu lỗ:</div><div class="ref-loss">-10%</div><div class="ref-rec-lbl">Cần hồi phục:</div><div class="ref-rec">+11.1%</div></div>
             <div class="ref-box"><div class="ref-lbl">Nếu lỗ:</div><div class="ref-loss">-30%</div><div class="ref-rec-lbl">Cần hồi phục:</div><div class="ref-rec">+42.9%</div></div>
@@ -230,85 +204,75 @@ function fc(v){return VF.format(v);}
 function fp(v){return(v>=0?'+':'')+v.toFixed(2)+'%';}
 function sync(k,v){S[k]=Number(v);document.getElementById('sl-'+k).value=v;document.getElementById('in-'+k).value=v;draw();}
 function resetClassic(){S.start=10000;S.y1=50;S.y2=-50;['start','y1','y2'].forEach(function(k){document.getElementById('sl-'+k).value=S[k];document.getElementById('in-'+k).value=S[k];});draw();}
-function svgLine(x1,y1,x2,y2,stroke,dash){return '<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+stroke+'"'+(dash?' stroke-dasharray="'+dash+'"':'')+'/>';}
-function svgCircle(cx,cy,r,fill){return '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+fill+'" stroke="#0f172a" stroke-width="3"/>';}
-function svgText(x,y,txt,fill,size){return '<text x="'+x+'" y="'+y+'" text-anchor="middle" fill="'+fill+'" font-size="'+size+'" font-weight="700" font-family="Be Vietnam Pro,sans-serif">'+txt+'</text>';}
+function svgT(x,y,txt,fill,size){return '<text x="'+x+'" y="'+y+'" text-anchor="middle" fill="'+fill+'" font-size="'+size+'" font-weight="700" font-family="Be Vietnam Pro,sans-serif">'+txt+'</text>';}
 function draw(){
   var s=S.start,r1=S.y1,r2=S.y2;
   var a1=s*(1+r1/100),a2=a1*(1+r2/100);
   var total=(a2-s)/s*100,rec=a2<s?(s-a2)/a2*100:0;
-  var c1=r1>=0?'#34d399':'#f87171',c2=r2>=0?'#34d399':'#f87171';
+  var c1=r1>=0?'#16a34a':'#e11d1d',c2=r2>=0?'#16a34a':'#e11d1d';
   document.getElementById('disp-start').textContent=fc(s);
-  document.getElementById('disp-y1').style.color=c1;
-  document.getElementById('disp-y1').textContent=(r1>=0?'+':'')+r1+'%';
-  document.getElementById('disp-y2').style.color=c2;
-  document.getElementById('disp-y2').textContent=(r2>=0?'+':'')+r2+'%';
+  document.getElementById('disp-y1').style.color=c1;document.getElementById('disp-y1').textContent=(r1>=0?'+':'')+r1+'%';
+  document.getElementById('disp-y2').style.color=c2;document.getElementById('disp-y2').textContent=(r2>=0?'+':'')+r2+'%';
   var maxV=Math.max(s,a1,a2,1000)*1.15,minV=Math.min(s,a1,a2,0)*0.85,rng=maxV-minV||1;
   function yc(v){return 160-((v-minV)/rng*120+20);}
-  var x1=80,x2=250,x3=420;
-  var y1=yc(s),y2=yc(a1),y3=yc(a2);
-  var mid=r1>=0?'#10b981':'#f43f5e',tail=a2>=s?'#10b981':'#f43f5e';
+  var x1=80,x2=250,x3=420,y1=yc(s),y2=yc(a1),y3=yc(a2);
+  var mid=r1>=0?'#16a34a':'#e11d1d',tail=a2>=s?'#16a34a':'#e11d1d';
   var h='<defs>'
     +'<linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="0%">'
-    +'<stop offset="0%" stop-color="#6366f1"/>'
+    +'<stop offset="0%" stop-color="#555"/>'
     +'<stop offset="50%" stop-color="'+mid+'"/>'
     +'<stop offset="100%" stop-color="'+tail+'"/>'
     +'</linearGradient>'
     +'<linearGradient id="la" x1="0%" y1="0%" x2="0%" y2="100%">'
-    +'<stop offset="0%" stop-color="#6366f1"/>'
-    +'<stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>'
+    +'<stop offset="0%" stop-color="#e11d1d" stop-opacity="0.10"/>'
+    +'<stop offset="100%" stop-color="#e11d1d" stop-opacity="0"/>'
     +'</linearGradient>'
     +'</defs>';
-  h+=svgLine(x1,20,x1,150,'#1e293b','3,3');
-  h+=svgLine(x2,20,x2,150,'#1e293b','3,3');
-  h+=svgLine(x3,20,x3,150,'#1e293b','3,3');
-  if(minV<0){h+=svgLine(50,yc(0),450,yc(0),'#f43f5e','4,4');}
-  h+='<path d="M '+x1+' '+y1+' L '+x2+' '+y2+' L '+x3+' '+y3+'" fill="none" stroke="url(#lg)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>';
-  h+='<path d="M '+x1+' 150 L '+x1+' '+y1+' L '+x2+' '+y2+' L '+x3+' '+y3+' L '+x3+' 150 Z" fill="url(#la)" opacity="0.15"/>';
-  h+=svgCircle(x1,y1,7,'#6366f1');
-  h+=svgCircle(x2,y2,7,mid);
-  h+=svgCircle(x3,y3,7,tail);
-  h+=svgText(x1,y1-13,fc(s),'#cbd5e1',10);
-  h+=svgText(x1,170,'Gốc (Start)','#475569',9.5);
-  h+=svgText(x2,y2-13,fc(a1),'#cbd5e1',10);
-  h+=svgText(x2,170,'Năm 1 (Y1)','#475569',9.5);
-  h+=svgText(x3,y3-13,fc(a2),'#cbd5e1',10);
-  h+=svgText(x3,170,'Năm 2 (Y2)','#475569',9.5);
+  h+='<line x1="'+x1+'" y1="20" x2="'+x1+'" y2="150" stroke="#e5e5e5" stroke-dasharray="3,3"/>';
+  h+='<line x1="'+x2+'" y1="20" x2="'+x2+'" y2="150" stroke="#e5e5e5" stroke-dasharray="3,3"/>';
+  h+='<line x1="'+x3+'" y1="20" x2="'+x3+'" y2="150" stroke="#e5e5e5" stroke-dasharray="3,3"/>';
+  if(minV<0){h+='<line x1="50" y1="'+yc(0)+'" x2="450" y2="'+yc(0)+'" stroke="#e11d1d" stroke-opacity="0.25" stroke-dasharray="4,4"/>';}
+  h+='<path d="M '+x1+' '+y1+' L '+x2+' '+y2+' L '+x3+' '+y3+'" fill="none" stroke="url(#lg)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>';
+  h+='<path d="M '+x1+' 150 L '+x1+' '+y1+' L '+x2+' '+y2+' L '+x3+' '+y3+' L '+x3+' 150 Z" fill="url(#la)"/>';
+  h+='<circle cx="'+x1+'" cy="'+y1+'" r="6" fill="#555" stroke="#fff" stroke-width="2.5"/>';
+  h+='<circle cx="'+x2+'" cy="'+y2+'" r="6" fill="'+mid+'" stroke="#fff" stroke-width="2.5"/>';
+  h+='<circle cx="'+x3+'" cy="'+y3+'" r="6" fill="'+tail+'" stroke="#fff" stroke-width="2.5"/>';
+  h+=svgT(x1,y1-13,fc(s),'#333',10);
+  h+=svgT(x1,170,'Gốc (Start)','#aaa',9.5);
+  h+=svgT(x2,y2-13,fc(a1),'#333',10);
+  h+=svgT(x2,170,'Năm 1 (Y1)','#aaa',9.5);
+  h+=svgT(x3,y3-13,fc(a2),'#333',10);
+  h+=svgT(x3,170,'Năm 2 (Y2)','#aaa',9.5);
   document.getElementById('main-svg').innerHTML=h;
   document.getElementById('flow-text').innerHTML=
-    fc(s)+' <span style="color:#4f46e5">→</span>'
+    '<span style="color:#555">'+fc(s)+'</span> <span style="color:#ccc">→</span>'
     +' <span style="color:'+c1+'">'+fc(a1)+' ('+(r1>=0?'+':'')+r1+'%)</span>'
-    +' <span style="color:#4f46e5">→</span>'
-    +' <span style="color:'+(a2>=a1?'#34d399':'#f87171')+'">'+fc(a2)+' ('+(r2>=0?'+':'')+r2+'%)</span>';
+    +' <span style="color:#ccc">→</span>'
+    +' <span style="color:'+(a2>=a1?'#16a34a':'#e11d1d')+'">'+fc(a2)+' ('+(r2>=0?'+':'')+r2+'%)</span>';
   var rp=document.getElementById('result-pill');
-  if(total>=0){rp.style.background='rgba(16,185,129,0.1)';rp.style.border='1px solid rgba(16,185,129,0.2)';rp.style.color='#6ee7b7';}
-  else{rp.style.background='rgba(244,63,94,0.1)';rp.style.border='1px solid rgba(244,63,94,0.2)';rp.style.color='#fca5a5';}
-  rp.innerHTML='<div style="font-size:8.5px;font-weight:700;text-transform:uppercase;opacity:.75;margin-bottom:2px;">Kết quả cuối cùng</div><div>'+fp(total)+'</div>';
+  if(total>=0){rp.style.background='#f0fdf4';rp.style.border='1.5px solid #86efac';rp.style.color='#15803d';}
+  else{rp.style.background='#fff5f5';rp.style.border='1.5px solid #fca5a5';rp.style.color='#c41a1a';}
+  rp.innerHTML='<div style="font-size:8.5px;font-weight:700;text-transform:uppercase;opacity:.7;margin-bottom:2px;">Kết quả cuối cùng</div><div>'+fp(total)+'</div>';
   document.getElementById('st-start').textContent=fc(s);
   document.getElementById('st-y1-lbl').textContent='Sau Năm 1 ('+(r1>=0?'+':'')+r1+'%):';
-  document.getElementById('st-y1-val').style.color=c1;
-  document.getElementById('st-y1-val').textContent=fc(a1);
+  document.getElementById('st-y1-val').style.color=c1;document.getElementById('st-y1-val').textContent=fc(a1);
   document.getElementById('st-y2-lbl').textContent='Sau Năm 2 ('+(r2>=0?'+':'')+r2+'%):';
-  document.getElementById('st-y2-val').style.color=a2>=a1?'#34d399':'#f87171';
-  document.getElementById('st-y2-val').textContent=fc(a2);
+  document.getElementById('st-y2-val').style.color=a2>=a1?'#16a34a':'#e11d1d';document.getElementById('st-y2-val').textContent=fc(a2);
   var rs=document.getElementById('recovery-section');
   if(a2<s){
-    rs.innerHTML=
-      '<p style="font-size:11px;color:#fca5a5;line-height:1.6;margin-bottom:8px;">'
-      +'Tài sản sụt từ <strong style="color:#fff">'+fc(s)+'</strong> xuống còn <strong style="color:#fff">'+fc(a2)+'</strong>.</p>'
+    rs.innerHTML='<p style="font-size:11px;color:#e11d1d;line-height:1.6;margin-bottom:8px;">Tài sản sụt từ <strong style="color:#111">'+fc(s)+'</strong> xuống còn <strong style="color:#111">'+fc(a2)+'</strong>.</p>'
       +'<div class="recovery-box">'
-      +'<p style="font-size:10px;color:#94a3b8;margin-bottom:3px;">Để quay lại vốn ban đầu, cần tăng thêm:</p>'
+      +'<p style="font-size:10px;color:#888;margin-bottom:3px;">Để quay lại vốn ban đầu, cần tăng thêm:</p>'
       +'<div class="recovery-val">'+rec.toFixed(2)+'%</div>'
-      +'<p style="font-size:9.5px;color:#64748b;margin-top:5px;line-height:1.6;">Tính theo công thức:<br>((Vốn đầu - TS hiện tại) / TS hiện tại) × 100%</p>'
+      +'<p style="font-size:9.5px;color:#aaa;margin-top:5px;line-height:1.6;">Tính theo công thức:<br>((Vốn đầu - TS hiện tại) / TS hiện tại) × 100%</p>'
       +'</div>';
   } else {
-    rs.innerHTML=
-      '<div style="text-align:center;padding:14px 0;">'
-      +'<div style="width:32px;height:32px;border-radius:50%;background:rgba(16,185,129,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 8px;">'
-      +'<svg width="18" height="18" fill="none" stroke="#34d399" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'
+    rs.innerHTML='<div style="text-align:center;padding:14px 0;">'
+      +'<div style="width:32px;height:32px;border-radius:50%;background:#f0fdf4;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;">'
+      +'<svg width="18" height="18" fill="none" stroke="#16a34a" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'
       +'</div>'
-      +'<p style="font-size:12px;font-weight:700;color:#34d399;">Không cần phục hồi vốn</p>'
-      +'<p style="font-size:11px;color:#475569;margin-top:4px;">Tài sản hiện tại ≥ vốn ban đầu.</p>'
+      +'<p style="font-size:12px;font-weight:700;color:#16a34a;">Không cần phục hồi vốn</p>'
+      +'<p style="font-size:11px;color:#aaa;margin-top:4px;">Tài sản hiện tại ≥ vốn ban đầu.</p>'
       +'</div>';
   }
 }
